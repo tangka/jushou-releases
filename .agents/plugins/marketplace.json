@@ -1,0 +1,20 @@
+{
+  "name": "jushou",
+  "interface": {
+    "displayName": "巨手"
+  },
+  "plugins": [
+    {
+      "name": "tangka",
+      "source": {
+        "source": "local",
+        "path": "./plugins/tangka"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,17 +1,47 @@
-# 巨手下载
+# 巨手 Codex 插件
 
-这里是巨手的公开下载仓库，只发布打包好的安装包，不发布产品源码。
+这是巨手的公开 Codex marketplace 仓库，只发布可安装插件和打包好的运行包，不发布产品源码。
 
-## 安装
+## 给 Codex 的安装方式
 
-1. 打开 Releases
-2. 下载 `jushou-macos-0.1.0.zip`
-3. 解压后双击 `Install.command`
+把这个链接发给 Codex：
 
-## 校验
+```text
+https://github.com/tangka/jushou-releases
+```
 
-下载同版本 `.sha256` 文件后校验：
+让 Codex 执行：
 
 ```bash
-shasum -a 256 -c jushou-macos-0.1.0.zip.sha256
+codex plugin marketplace add tangka/jushou-releases --ref main
+codex plugin add tangka@jushou
 ```
+
+安装后在 Codex 里选择插件「巨手」。
+
+## 本地运行引擎
+
+Codex 插件安装后，第一次使用巨手时如果本机还没有 `woa` 命令，插件会下载 Release 里的安装包并安装本地运行引擎。
+
+手动安装也可以下载：
+
+```text
+https://github.com/tangka/jushou-releases/releases/latest
+```
+
+## 授权
+
+未导入 license 时，可以完成插件安装、打开配置页和查看机器码，但不能抓取 URL、生成草稿或上传草稿。
+
+```bash
+woa license machine-id
+woa license import ./license.json
+woa license status
+```
+
+## 边界
+
+- 不需要 Docker。
+- 不自动发布。
+- 不群发。
+- 只上传到微信公众号草稿箱。

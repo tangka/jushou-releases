@@ -1,0 +1,28 @@
+{
+  "name": "tangka",
+  "version": "0.1.3",
+  "description": "Codex\u516c\u4f17\u53f7\u5927\u5e2e\u624b\uff0c\u5168\u81ea\u52a8\u5316\u8fd0\u8425\u516c\u4f17\u53f7",
+  "author": {
+    "name": "\u79e6\u9c8d\u52c3"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "\u5de8\u624b",
+    "shortDescription": "Codex\u516c\u4f17\u53f7\u5927\u5e2e\u624b\uff0c\u5168\u81ea\u52a8\u5316\u8fd0\u8425\u516c\u4f17\u53f7",
+    "longDescription": "Codex\u516c\u4f17\u53f7\u5927\u5e2e\u624b\uff0c\u5168\u81ea\u52a8\u5316\u8fd0\u8425\u516c\u4f17\u53f7\u3002",
+    "developerName": "\u79e6\u9c8d\u52c3",
+    "category": "Productivity",
+    "capabilities": [
+      "Write",
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "\u7528\u5de8\u624b\u628a\u8fd9\u4e2a URL \u505a\u6210\u4e2d\u6587\u516c\u4f17\u53f7\u8349\u7a3f\u3002",
+      "\u7528\u5de8\u624b\u628a\u672c\u5730\u8349\u7a3f\u4e0a\u4f20\u5230\u516c\u4f17\u53f7\u8349\u7a3f\u7bb1\u3002",
+      "\u7528\u5de8\u624b\u68c0\u67e5\u6211\u7684\u516c\u4f17\u53f7\u8d26\u53f7\u914d\u7f6e\u548c\u6388\u6743\u72b6\u6001\u3002"
+    ],
+    "brandColor": "#D97757",
+    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/app-icon.png"
+  }
+}
