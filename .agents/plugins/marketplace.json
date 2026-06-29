@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "tangka",
+      "name": "jushou",
       "source": {
         "source": "local",
-        "path": "./plugins/tangka"
+        "path": "./plugins/jushou"
       },
       "policy": {
         "installation": "AVAILABLE",

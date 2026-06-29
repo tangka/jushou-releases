@@ -13,8 +13,16 @@ https://github.com/tangka/jushou-releases
 让 Codex 执行：
 
 ```bash
+curl -fsSL https://raw.githubusercontent.com/tangka/jushou-releases/main/install-codex.sh | bash
+```
+
+这会安装 `jushou@jushou`，并自动打开插件详情页。
+
+手动安装命令：
+
+```bash
 codex plugin marketplace add tangka/jushou-releases --ref main
-codex plugin add tangka@jushou
+codex plugin add jushou@jushou
 ```
 
 安装后在 Codex 里选择插件「巨手」。

@@ -19,9 +19,9 @@ command -v woa
 
 ```bash
 tmp="$(mktemp -d)"
-curl -L -o "$tmp/jushou.zip" "https://github.com/tangka/jushou-releases/releases/download/v0.1.3/jushou-macos-0.1.3.zip"
+curl -L -o "$tmp/jushou.zip" "https://github.com/tangka/jushou-releases/releases/download/v0.1.4/jushou-macos-0.1.4.zip"
 unzip -q "$tmp/jushou.zip" -d "$tmp"
-JUSHOU_INSTALL_CODEX=0 bash "$tmp/jushou-macos-0.1.3/.jushou-payload/install.sh"
+JUSHOU_INSTALL_CODEX=0 bash "$tmp/jushou-macos-0.1.4/.jushou-payload/install.sh"
 ```
 
 3. 验证安装：
