@@ -15,14 +15,41 @@ description: "当用户要求安装巨手、设置巨手、配置公众号助手
 command -v woa
 ```
 
-2. 如果不存在，下载并安装当前版本：
+2. 如果不存在，先判断当前系统，再下载对应安装包。不要在 Windows 上下载 `jushou-macos-*.zip`，也不要在 macOS 上下载 `jushou-windows-*.zip`。
+
+系统判断规则：
+
+- `process.platform === "darwin"` 或终端是 macOS/zsh/bash：用 macOS 包。
+- `process.platform === "win32"` 或终端是 Windows PowerShell/CMD：用 Windows 包。
+- Linux 暂不支持一键包，直接说明当前版本只支持 macOS 和 Windows。
+
+macOS：
 
 ```bash
 tmp="$(mktemp -d)"
-curl -L -o "$tmp/jushou.zip" "https://github.com/tangka/jushou-releases/releases/download/v0.1.6/jushou-macos-0.1.6.zip"
+curl -L -o "$tmp/jushou.zip" "https://github.com/tangka/jushou-releases/releases/download/v0.1.7/jushou-macos-0.1.7.zip"
 unzip -q "$tmp/jushou.zip" -d "$tmp"
-JUSHOU_INSTALL_CODEX=0 bash "$tmp/jushou-macos-0.1.6/.jushou-payload/install.sh"
+JUSHOU_INSTALL_CODEX=0 bash "$tmp/jushou-macos-0.1.7/.jushou-payload/install.sh"
 ```
+
+Windows PowerShell：
+
+```powershell
+$tmp = Join-Path $env:TEMP ("jushou-" + [guid]::NewGuid())
+New-Item -ItemType Directory -Force -Path $tmp | Out-Null
+Invoke-WebRequest -Uri "https://github.com/tangka/jushou-releases/releases/download/v0.1.7/jushou-windows-0.1.7.zip" -OutFile "$tmp\jushou.zip"
+Expand-Archive "$tmp\jushou.zip" -DestinationPath $tmp -Force
+$env:JUSHOU_INSTALL_CODEX = "0"
+powershell -NoProfile -ExecutionPolicy Bypass -File "$tmp\jushou-windows-0.1.7\.jushou-payload\install.ps1"
+```
+
+如果不确定系统，先运行：
+
+```bash
+node -p "process.platform"
+```
+
+返回 `darwin` 用 macOS 包；返回 `win32` 用 Windows 包。
 
 3. 验证安装：
 
