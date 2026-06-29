@@ -27,9 +27,9 @@ macOS：
 
 ```bash
 tmp="$(mktemp -d)"
-curl -L -o "$tmp/jushou.zip" "https://github.com/tangka/jushou-releases/releases/download/v0.1.7/jushou-macos-0.1.7.zip"
+curl -L -o "$tmp/jushou.zip" "https://github.com/tangka/jushou-releases/releases/download/v0.1.8/jushou-macos-0.1.8.zip"
 unzip -q "$tmp/jushou.zip" -d "$tmp"
-JUSHOU_INSTALL_CODEX=0 bash "$tmp/jushou-macos-0.1.7/.jushou-payload/install.sh"
+JUSHOU_INSTALL_CODEX=0 bash "$tmp/jushou-macos-0.1.8/.jushou-payload/install.sh"
 ```
 
 Windows PowerShell：
@@ -37,10 +37,10 @@ Windows PowerShell：
 ```powershell
 $tmp = Join-Path $env:TEMP ("jushou-" + [guid]::NewGuid())
 New-Item -ItemType Directory -Force -Path $tmp | Out-Null
-Invoke-WebRequest -Uri "https://github.com/tangka/jushou-releases/releases/download/v0.1.7/jushou-windows-0.1.7.zip" -OutFile "$tmp\jushou.zip"
+Invoke-WebRequest -Uri "https://github.com/tangka/jushou-releases/releases/download/v0.1.8/jushou-windows-0.1.8.zip" -OutFile "$tmp\jushou.zip"
 Expand-Archive "$tmp\jushou.zip" -DestinationPath $tmp -Force
 $env:JUSHOU_INSTALL_CODEX = "0"
-powershell -NoProfile -ExecutionPolicy Bypass -File "$tmp\jushou-windows-0.1.7\.jushou-payload\install.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "$tmp\jushou-windows-0.1.8\.jushou-payload\install.ps1"
 ```
 
 如果不确定系统，先运行：
