@@ -8,10 +8,10 @@ woa config init
 
 ## 2. 导入授权
 
-查看机器码并发送给销售方：
+查看授权请求，并把输出里的 `machineId` 发给微信 `qinbob97`：
 
 ```bash
-woa license machine-id
+woa license request
 ```
 
 收到 license 后导入：

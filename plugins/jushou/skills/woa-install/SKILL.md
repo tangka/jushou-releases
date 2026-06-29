@@ -19,9 +19,9 @@ command -v woa
 
 ```bash
 tmp="$(mktemp -d)"
-curl -L -o "$tmp/jushou.zip" "https://github.com/tangka/jushou-releases/releases/download/v0.1.5/jushou-macos-0.1.5.zip"
+curl -L -o "$tmp/jushou.zip" "https://github.com/tangka/jushou-releases/releases/download/v0.1.6/jushou-macos-0.1.6.zip"
 unzip -q "$tmp/jushou.zip" -d "$tmp"
-JUSHOU_INSTALL_CODEX=0 bash "$tmp/jushou-macos-0.1.5/.jushou-payload/install.sh"
+JUSHOU_INSTALL_CODEX=0 bash "$tmp/jushou-macos-0.1.6/.jushou-payload/install.sh"
 ```
 
 3. 验证安装：
@@ -31,10 +31,10 @@ woa doctor
 woa license status
 ```
 
-4. 如果用户还没有授权，获取机器码：
+4. 如果用户还没有授权，获取授权请求，并提示用户把输出里的 `machineId` 发给微信 `qinbob97`：
 
 ```bash
-woa license machine-id
+woa license request
 ```
 
 ## 约束
